@@ -2,11 +2,11 @@
 
     Made by Logicians
 
-1.Paulos Asmelash       ETS1149/16
-2.Rahmet Abdela         ETS1161/16
-3.Salim Ahmed           ETS1213/16
-4.Samuel Lire           ETS1230/16
-5.Sara Redwan           ETS1241/16
+1.Paulos Asmelash       
+2.Rahmet Abdela
+3.Salim Ahmed
+4.Samuel Lire
+5.Sara Redwan
 
 */
 
@@ -31,10 +31,10 @@ int main() {
 	cout << "========================================================\n" <<"|*** "<<
 	     "Welcome to Logicians Airline Reservation System!" <<"***|\n" <<
 	     "=========================================================\n" <<endl;
-        start:
+start:
 	// Loop to display menu and process user choices
 	while (true) {
-		cout << "\n Please Select an option from the menu below:\n";
+		cout << "\n Please Select an option from the menu below:\n\n";
 		cout << "1. Please type 1 for First Class Reservation" << endl;
 		cout << "2. Please type 2 for Economy Class Reservation" << endl;
 		cout << "3. Please type 3 to see available and occupied seats" << endl;
@@ -42,10 +42,10 @@ int main() {
 		cout << "5. Please type 5 to search for a passenger by name" << endl;
 		cout << "6. Please type 6 to exit the program" << endl;
 		cout << "----------------------------------------------------------" << endl;
-         p:
+p:
 		cin >> choice;
 
-        z:
+z:
 		if (choice == 1 || choice == 2) {   // Determine seat type (First Class or Economy)
 			seatType = (choice == 1) ? 0 : 1;
 			bool seatAssigned = false;
@@ -56,7 +56,7 @@ int main() {
 					cout << "Enter your name: ";
 					cin.ignore();
 					int trialCount = 3;
-                    a:
+a:
 					getline(cin, name);
 					trialCount--;
 					bool validname = true;
@@ -82,7 +82,7 @@ int main() {
 
 					cout << "Enter your sex: ";
 					trialCount = 3;
-                     b:
+b:
 					cin >> sex;
 					sex=toupper(sex);       // To convert lowercase to uppercase letter
 					trialCount--;
@@ -102,7 +102,7 @@ int main() {
 
 					cout << "Enter your age: ";
 					trialCount = 3;
-                    c:
+c:
 					cin >> age;
 					trialCount--;
 					if (cin.fail() || age < 0 ) {
@@ -121,7 +121,7 @@ int main() {
 					cin.ignore(1000, '\n');
 					cout << "Enter your passport number: ";
 					trialCount = 3;
-                     d:
+d:
 					getline(cin, passportNumber);
 					trialCount--;
 					bool validPassport = true;
@@ -256,7 +256,7 @@ int main() {
 				cout << "Passenger not found.\n" << endl;
 			}
 		} else if (choice == 6) {
-           end:
+end:
 			cout << "Exiting the program. Thank you for using our Airline Reservation System!" << endl;
 			break;
 		} else {
@@ -264,7 +264,7 @@ int main() {
 				cin.clear();
 				cin.ignore(1000, '\n');
 				cout << "Invalid option. Please choose correctly again." << endl;
-				goto p;
+				goto p; //choice input
 			}
 
 		}
@@ -272,13 +272,14 @@ int main() {
 		cout<<"Do you want to continue?(yes/no): ";
 		cin>>answer;
 		if(answer=="yes"||answer=="YES") {
-			goto start;
+			goto start; //menu
 		}
 
 		else if(answer=="no"||answer=="NO") {
-			goto end;;
+			goto end;
 		}
 	}
+	
 	return 0;
 
 }
